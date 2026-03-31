@@ -1,0 +1,32 @@
+name: Generar Reporte de Activos
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:   # 👈 para ejecutarlo manualmente
+
+jobs:
+  generar-reporte:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependencias
+        run: |
+          pip install pandas openpyxl
+
+      - name: Ejecutar script
+        run: python script.py
+
+      - name: Subir resultado
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-activos
+          path: resultado.xlsx
