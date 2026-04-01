@@ -3,7 +3,7 @@ from datetime import datetime
 import os
 
 def procesar_archivo1():
-    ruta = os.path.join('App-Script', 'status_history.csv')
+    ruta = os.path.join('App-Script/status_history.csv')
 
     status_df = pd.read_csv(ruta, sep=';')
 
