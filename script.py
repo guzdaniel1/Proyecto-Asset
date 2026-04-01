@@ -1,3 +1,6 @@
+import pandas as pd
+from procesamiento import procesar_archivo1, procesar_archivo2
+
 def main():
     df1 = procesar_archivo1()
     df2 = procesar_archivo2()
