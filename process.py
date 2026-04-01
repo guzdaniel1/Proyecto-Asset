@@ -6,7 +6,7 @@ def procesar_archivo1():
    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ruta = os.path.join(BASE_DIR, 'Apps-Script', 'status_history.csv')
 
-    status_df = pd.read_csv(ruta, sep=';')
+    status_df = pd.read_csv(ruta)
 
     status_df = status_df.loc[:, ~status_df.columns.str.contains('^Unnamed')]
     status_df.columns = status_df.columns.str.strip().str.lower()
