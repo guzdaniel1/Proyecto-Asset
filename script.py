@@ -1,5 +1,5 @@
 import pandas as pd
-from main import procesar_archivo1
+from process import procesar_archivo1
 from utils import procesar_archivo2
 
 def main():
